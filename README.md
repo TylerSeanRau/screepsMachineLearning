@@ -34,6 +34,6 @@ Node.js 6+
 | kmeans.py | creates one cluster and displays the 5 most anomalous rows |
 
 #### Observations
-- kmeans.py
--- most anomalous rows are usually very recent data
--- even though center changes the average distance to the center always increases as new data points arrive
+* kmeans.py
+    * most anomalous rows are usually very recent data
+    * even though center changes the average distance to the center always increases as new data points arrive
