@@ -23,6 +23,17 @@ Node.js 6+
 3. `cd node-agent`
 4. `npm install`
 5. `node app.js`
+6. Collect some data and run various machine learning scripts
 
 #### Data collections
 - Data is stored in in a folder called `screepsData`
+
+### Machine Learning Scripts
+| Plugin | README |
+| ------ | ------ |
+| kmeans.py | creates one cluster and displays the 5 most anomalous rows |
+
+#### Observations
+- kmeans.py
+-- most anomalous rows are usually very recent data
+-- even though center changes the average distance to the center always increases as new data points arrive
