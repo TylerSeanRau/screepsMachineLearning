@@ -46,3 +46,6 @@ Node.js 6+
  * dbscan.py
     * most anomalous points are 3 point clusters where somewhere among those 3 points there's a source regen (meaning available source jumps up by 3000)
     * even though most of the anomalous points are source regens it does not detect all the source regens within a given set of data, unsure what percentage it does find
+  * General
+    * Source regens tend to dominate these clustering methods because they cause a huge jump in distance compared to all other values
+      * lead to me increasing weights on on num_creeps; however a better solution would've been to lower the possible values of source_energy.
