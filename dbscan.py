@@ -15,25 +15,8 @@ args = parser.parse_args()
 df = pd.read_csv("./screepsData/" + args.room)
 dfWithoutLabel = df.drop(['anomaly'],axis=1) if 'anomaly' in df.columns else df
 
-weights = [['num_creeps',5000]]
-for i in range(0,len(weights)):
-    for j in range(0,len(dfWithoutLabel)):
-        dfWithoutLabel.values[j][dfWithoutLabel.columns.get_loc(weights[i][0])] *= weights[i][1]
-
 db = DBSCAN(eps=args.e, min_samples=args.minpoints)
 db.fit(dfWithoutLabel)
-
-# print(dfWithoutLabel.values[0])
-# print("test")
-# distToNext = array("i")
-# dist = DistanceMetric.get_metric('euclidean')
-# for i in range(0,len(df)-1):
-#     print()
-# distancesToCenter=np.concatenate(dist.pairwise(df.values,kmeans.cluster_centers_))
-# print("Average dsitance to center")
-# print(np.average(distancesToCenter))
-#print(db.labels_)
-
 
 
 if 'anomaly' in df.columns:
