@@ -14,11 +14,6 @@ args = parser.parse_args()
 df = pd.read_csv("./screepsData/" + args.room)
 dfWithoutLabel = df.drop(['anomaly'],axis=1) if 'anomaly' in df.columns else df
 
-weights = [['num_creeps',1],['source_energy',0.01]]
-for i in range(0,len(weights)):
-    for j in range(0,len(dfWithoutLabel)):
-        dfWithoutLabel.values[j][dfWithoutLabel.columns.get_loc(weights[i][0])] *= weights[i][1]
-
 kmeans = KMeans(n_clusters=1)
 kmeans.fit(dfWithoutLabel)
 print("Center")
